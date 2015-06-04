@@ -20,14 +20,14 @@ public class MyAdapter extends BaseRecyclerViewAdapter<News, MyAdapter.MyViewHol
 
     @Override
     protected void bindDataToItemView(MyViewHolder myViewHolder, News item) {
-        myViewHolder.img.setBackgroundResource(cn.edu.zafu.baselibrary.R.mipmap.ic_launcher);
+        myViewHolder.img.setBackgroundResource(cn.edu.zafu.base.R.mipmap.ic_launcher);
         myViewHolder.title.setText(item.getTitle());
         myViewHolder.description.setText(item.getDescription());
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int type) {
-        return new MyViewHolder(inflateItemView(viewGroup, cn.edu.zafu.baselibrary.R.layout.item));
+        return new MyViewHolder(inflateItemView(viewGroup, cn.edu.zafu.base.R.layout.item));
     }
 
     public class MyViewHolder extends BaseRecyclerViewAdapter.BaseViewHolder {
@@ -41,9 +41,9 @@ public class MyAdapter extends BaseRecyclerViewAdapter<News, MyAdapter.MyViewHol
 
         @Override
         protected void findView() {
-            img = findViewById(cn.edu.zafu.baselibrary.R.id.img);
-            title = findViewById(cn.edu.zafu.baselibrary.R.id.title);
-            description = findViewById(cn.edu.zafu.baselibrary.R.id.description);
+            img = findViewById(cn.edu.zafu.base.R.id.img);
+            title = findViewById(cn.edu.zafu.base.R.id.title);
+            description = findViewById(cn.edu.zafu.base.R.id.description);
         }
     }
 

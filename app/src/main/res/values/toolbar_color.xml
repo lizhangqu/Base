@@ -1,0 +1,5 @@
+<resources>
+    <color name="colorPrimary">#ff448aff</color>
+    <color name="colorPrimaryDark">#ff2a64ca</color>
+    <color name="overflowTextColor">#9e9e9e</color>
+</resources>

@@ -4,6 +4,7 @@
       tools:context=".MainActivity">
     <item
         android:id="@+id/action_settings"
+        android:icon="@mipmap/toolbar_back"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never"/>

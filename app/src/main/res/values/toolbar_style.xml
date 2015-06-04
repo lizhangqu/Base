@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="Toolbar.Base" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <!-- 状态栏和标题栏颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- 标题颜色-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!-- 溢出菜单图标颜色-->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- 箭头 -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!-- 溢出菜单文字颜色-->
+        <item name="textAppearanceLargePopupMenu">@style/OverflowMenuTextAppearance</item>
+        <!-- 菜单项点击selector-->
+        <item name="actionBarItemBackground">@drawable/abc_item_background_holo_dark</item>
+    </style>
+    <!-- 左边的箭头指示-->
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+    <!--溢出菜单文字样式-->
+    <style name="OverflowMenuTextAppearance" parent="@style/TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/overflowTextColor</item>
+    </style>
+</resources>
