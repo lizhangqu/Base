@@ -15,7 +15,7 @@ public class BaseActivity extends AppCompatActivity {
     protected Toolbar toolbar;
 
     /**
-     * shou toolbar
+     * show toolbar
      * if the title is set ,the title will show else it will show the label set to the activity
      *
      * @param title

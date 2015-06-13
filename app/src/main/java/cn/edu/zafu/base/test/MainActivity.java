@@ -53,12 +53,12 @@ public class MainActivity extends BaseActivity {
         News news = new News();
         news.setTitle("11111111111111");
         news.setDescription("aaaaaaaaaaaaaaa");
-
+        news.setType(1);
         list.add(news);
         news = new News();
         news.setTitle("222222222222");
         news.setDescription("bbbbbbbbbbb");
-
+        news.setType(1);
         list.add(news);
         news = new News();
         news.setTitle("33333333333");
@@ -68,6 +68,28 @@ public class MainActivity extends BaseActivity {
         news = new News();
         news.setTitle("444444444444");
         news.setDescription("ddddddd");
+        news.setType(1);
+        list.add(news);
+
+        list.add(news);
+        news = new News();
+        news.setTitle("444444444444");
+        news.setDescription("ddddddd");
+        news.setType(0);
+        list.add(news);
+
+        list.add(news);
+        news = new News();
+        news.setTitle("444444444444");
+        news.setDescription("ddddddd");
+        news.setType(0);
+        list.add(news);
+
+        list.add(news);
+        news = new News();
+        news.setTitle("444444444444");
+        news.setDescription("ddddddd");
+        news.setType(0);
         list.add(news);
     }
 

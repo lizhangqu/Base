@@ -1,9 +1,12 @@
 package cn.edu.zafu.base.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -16,7 +19,7 @@ import cn.edu.zafu.base.adapter.listener.OnItemLongClickListener;
  * version 1.0
  * date 2015/6/3.
  */
-public abstract class BaseRecyclerViewAdapter<T, VH extends BaseRecyclerViewAdapter.BaseViewHolder> extends RecyclerView.Adapter<VH> {
+public abstract class BaseRecyclerViewAdapter<T, VH extends BaseRecyclerViewAdapter.SparseArrayViewHolder> extends RecyclerView.Adapter<VH> {
 
     /**
      * click listener
@@ -151,6 +154,7 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends BaseRecyclerViewAdap
      * using bindViewById(View view,int id) function to handle the relations between view and viewId
      */
     public abstract static class BaseViewHolder extends RecyclerView.ViewHolder {
+
         public BaseViewHolder(View itemView) {
             super(itemView);
             findView();
@@ -170,6 +174,85 @@ public abstract class BaseRecyclerViewAdapter<T, VH extends BaseRecyclerViewAdap
          */
         protected <T extends View> T findViewById(int id) {
             return (T) itemView.findViewById(id);
+        }
+
+    }
+
+    public static class SparseArrayViewHolder extends RecyclerView.ViewHolder {
+        private final SparseArray<View> views;
+
+        public SparseArrayViewHolder(View itemView) {
+            super(itemView);
+            views = new SparseArray<View>();
+        }
+
+        public <T extends View> T getView(int id) {
+            View view = views.get(id);
+            if (view == null) {
+                view = itemView.findViewById(id);
+                views.put(id, view);
+            }
+            return (T) view;
+        }
+
+        public SparseArrayViewHolder setText(int viewId, String value) {
+            TextView view = getView(viewId);
+            view.setText(value);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setTextColor(int viewId, int textColor) {
+            TextView view = getView(viewId);
+            view.setTextColor(textColor);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setImageResource(int viewId, int imageResId) {
+            ImageView view = getView(viewId);
+            view.setImageResource(imageResId);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setBackgroundColor(int viewId, int color) {
+            View view = getView(viewId);
+            view.setBackgroundColor(color);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setBackgroundResource(int viewId, int backgroundRes) {
+            View view = getView(viewId);
+            view.setBackgroundResource(backgroundRes);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setVisible(int viewId, boolean visible) {
+            View view = getView(viewId);
+            view.setVisibility(visible ? View.VISIBLE : View.GONE);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setOnClickListener(int viewId, View.OnClickListener listener) {
+            View view = getView(viewId);
+            view.setOnClickListener(listener);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setOnTouchListener(int viewId, View.OnTouchListener listener) {
+            View view = getView(viewId);
+            view.setOnTouchListener(listener);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setOnLongClickListener(int viewId, View.OnLongClickListener listener) {
+            View view = getView(viewId);
+            view.setOnLongClickListener(listener);
+            return SparseArrayViewHolder.this;
+        }
+
+        public SparseArrayViewHolder setTag(int viewId, Object tag) {
+            View view = getView(viewId);
+            view.setTag(tag);
+            return SparseArrayViewHolder.this;
         }
 
     }

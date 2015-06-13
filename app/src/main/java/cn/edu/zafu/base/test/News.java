@@ -8,6 +8,15 @@ public class News {
     private String mUrl;
     private String mDescription;
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    private int type;
     public String getTitle() {
         return mTitle;
     }
